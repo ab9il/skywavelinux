@@ -1,130 +1,130 @@
-# finpilot
+# Skywave Linux
 
-A template for building your own bootc operating system image, assembled the
-same way Bluefin, Aurora, and Bluefin LTS are: from shared OCI layers rather
-than by modifying an existing image. The desktop configuration comes from
-[`projectbluefin/common`](https://github.com/projectbluefin/common), Homebrew
-from [`ublue-os/brew`](https://github.com/ublue-os/brew), and the rest is yours.
+## The image-based version of Skywave Linux.
 
-It is built to be driven by hand or by an agent.
 
-> Be the one who moves, not the one who is moved.
+### About this New Way of Building an Operating System
 
-## What Makes this Raptor Different?
+Skywave Linux is now adopting atomic / image-based architecture! It comes to
+you as a bootc operating system image, assembled similarly to Bluefin and Bazzite,
+using shared OCI layers. It is practically unbreakable, since the system core
+is built and tested here in the cloud, before deployed to you, while your userpace
+applications are separately built, tested, and maintained.
 
-Here are the changes from [Base Image Name]. This image is based on
-[Bluefin/Bazzite/Aurora/etc] and includes these customizations:
+Skywave Linux no longer packs as many tools into the initial download, so you can get
+up and going faster. You also have tremendous freedom in the applications you install,
+including Podman / Docker containers from any of the popular Linux distributions. With
+containers, you can run a mix of apps from various distributions, and even Windows, if
+you so choose.
 
-### Added Packages (Build-time)
+**In other words, you can now run just about anything imaginable.**
 
-- List the packages you install at build time
+### What Makes this System Different?
 
-### Added Applications (Runtime)
+- **Fedora Linux Core:** This base image uses [Fedora Hummingbird](https://fedoraproject.org/wiki/hummingbird).
+- **Scrollable Tiling**: Navigate windows on an infinite horizontal ribbon using Niri, augmented by the [Noctalia](https://github.com/noctalia-dev/noctalia) desktop shell.
+- **Frequent Security & Atomic Upgrades**: Images are rebuilt daily, pulling the latest upstream updates and packages. Updates apply atomically in the background.
 
-- **CLI tools (Homebrew)**: list them
-- **GUI apps (Flatpak)**: list them
+#### Special Web Browser Tools:
 
-### Removed or Disabled
+- Mediumwave Tuner for Internet SDRs
+- Aviation Tuner for Internet SDRs
+- Internet SDR Map
 
-- List anything removed from the base image
 
-### Configuration Changes
+#### Added Applications (Runtime):
 
-- Systemd services enabled or disabled
-- Desktop environment changes
-- Other notable modifications
+- **CLI tools (Homebrew)**:
+  - Extra bling and conveniences for the Bash shell
+   - Cosign (authentication keys for git, etc.)
+  - Fzf / Ripgrep / terminal based search tools
+  - Tor (The Onion Router)
+  - I2P (Invisible Internet Project)
+  - Lazygit (git content manager)
+  - Lf (file manager)
+  - Neovim (text / code editor)
+  - Sshuttle (ssh based tunneling / VPN)
+  - Uv (Python manager)
+- **GUI apps (Flatpak)**:
+  - Audacity (audio editor)
+  - Bleachbit (system cleaner)
+  - Bottles (run Windows apps)
+  - Brave (web browser)
+  - Fldigi (multi mode digital decoder)
+  - Gpredict (weather satellite tracking)
+  - JS8Call (JS8 digital mode decoder)
+  - Obsidian (Markdown based note-taking)
+  - Shortwave (internet radio studio streams)
+  - WSJTX (weak signal digital modes)
+  - Transmission (bit torrent client)
+  - VLC (media player)
+  - Zathura (PDF reader)
 
-_Last updated: [date]_
+#### Removed or Disabled
 
-> This section is what tells your users how your image differs from its base.
-> Update it whenever you add or remove a package, app, or service.
+- Firefox (web browser)
 
-## Quick start
+#### Configuration Changes
 
-1. **Create your repository** — "Use this template" on GitHub.
-2. **Rename the project.** The published name is your repository name. Three
-   files carry it as a literal, and `just test-contract` fails if they disagree:
+- **Desktop Environment:**
+  - Niri Scrolling Window Manager with Noctalia.
+- **SDR Hardware Drivers:**
+  - hackrf
+  - hackrf-devel
+  - rtl-sdr
+  - rtl-sdr-devel
+  - SoapySDR
+  - SoapySDR-devel
+  - soapy-rtlsdr
+  - soapy-uhd
+  - uhd (You still need to install a binary for your uhd radio.)
+  - uhd-devel
+- **Timekeeing:** Extra Chrony settings for tighter NTP clock sync.
 
-   - `Containerfile` — the `# Name:` comment and `ARG IMAGE_NAME`
-   - `Justfile` — the `IMAGE_NAME` default
-   - `artifacthub-repo.yml` — `repositoryID`
 
-   Grep for `finpilot` afterwards to catch the prose and the examples.
-3. **Finish setup.** [The `onboarding` skill](.agents/skills/onboarding/SKILL.md)
-   carries the rest — enabling Actions, auto-merge and workflow permissions, the
-   Renovate token, the `stable` branch, branch protection on both branches, and
-   the labels. Every step has a `gh` command and a GitHub-website route, and the
-   skill ends by auditing that each setting matches.
+_Last updated: [2026-11-09]_
 
-## What's included
 
-**Build system**
+### Get this image by _rebasing:_
 
-- A build on every push to `main`, publishing `:stable-testing`
-- Renovate through `projectbluefin/actions`, updating pinned actions and image
-  digests every six hours
-- Images older than 90 days pruned automatically
-- Pull requests validated for shellcheck, hadolint, Brewfiles, Flatpaks,
-  Justfiles, and Renovate config
-- Keyless OIDC signing on every published image, enforced at promotion
-  ([where the signature is checked](#where-the-signature-is-checked))
+1. Install Bluefin, Bazzite, Aurora, or any Universal Blue Linux system.
+2. Paste and execute this command in the terminal:
+3. Allow time for your Homebrew and Flatpak apps to download and install.
 
-**Runtime**
+```bash
+sudo bootc switch --transport registry ghcr.io/ab9il/skywavelinux:stable
+sudo systemctl reboot
+```
 
-- Homebrew, pre-staged at build time and unpacked on first boot
-- Flatpaks declared in `custom/flatpaks/`, installed on first boot
-- `ujust` shortcuts for the Brewfiles and for re-applying configuration
-- `uupd` for scheduled system updates
+Then, as your user, in the terminal:
 
-## Customize
+```bash
+ujust install-default-apps    # Homebrew: the default Brewfile
+ujust install-dev-tools       # Homebrew: the development Brewfile
+ujust configure-dev-groups    # add yourself to docker and libvirt
+ujust install-config          # re-apply the image defaults, backing up yours
+```
 
-Pick your base image on the `Containerfile`'s `FROM` line; the template defaults
-to Fedora Silverblue. That line is the only place the base is chosen: `just build`
-reads the image name and the tag from it, and the Fedora major comes from the
-base image itself during the build.
+First boot unpacks Homebrew and installs the declared Flatpaks; both need a
+network connection. Check them with `systemctl status brew-setup.service` and
+`systemctl status flatpak-preinstall.service`.
 
-Then add to your image:
-
-- **System packages** — `build/20-packages-and-services.sh` ([guide](build/README.md))
-- **CLI tools** — `custom/brew/` ([guide](custom/brew/README.md))
-- **GUI apps** — `custom/flatpaks/` ([guide](custom/flatpaks/README.md))
-- **Commands** — `custom/ujust/` ([guide](custom/ujust/README.md))
-
-[The `customize` skill](.agents/skills/customize/SKILL.md) decides which of
-those a given package belongs in.
-
-## Releases
-
-| Branch   | Image tag         | Audience                       |
-| -------- | ----------------- | ------------------------------ |
-| `main`   | `:stable-testing` | Testers and release candidates |
-| `stable` | `:stable`         | Production                     |
-
-Merging to `main` publishes `:stable-testing`; the promotion PR that follows
-publishes `:stable` when merged. Promotion verifies the cosign signature on the
-testing image before it reports ready, and refuses to promote at all once `main`
-has moved past the commit the promotion PR was built from.
-
-> **Known gap:** the promotion gate checks the digest and the signature only. It
-> runs no end-to-end tests, so `release/ready` means "signed and unmodified",
-> not "functionally validated".
-
-## Image signing
+### Image Authenticity and Signing
 
 Images are signed with keyless OIDC via Cosign and GitHub Actions. There is no
 key to generate or store.
 
 ```bash
 cosign verify \
-  --certificate-identity-regexp="https://github.com/your-username/your-repo-name/.github/workflows/" \
+  --certificate-identity-regexp="https://github.com/ab9il/skywavelinux/.github/workflows/" \
   --certificate-oidc-issuer="https://token.actions.githubusercontent.com" \
-  ghcr.io/your-username/your-repo-name:stable
+  ghcr.io/ab9il/skywavelinux:stable
 ```
 
 Unsigned images fail the promotion gate, so `main → stable` reports
 `release/blocked` until signing is restored.
 
-### Where the signature is checked
+#### Where the signature is checked
 
 **In CI, on the way to `:stable` — and not verified on the device.** The
 promotion gate is the only enforcement point. An installed system pulls its
@@ -152,61 +152,22 @@ install before shipping it: a scope that does not match turns `bootc upgrade`
 into a hard refusal. `tests/contract/image-signing_test.bats` holds the two
 sides together, so changing one without the other fails the suite.
 
-## Using your image
-
-Switch to a built image:
-
-```bash
-sudo bootc switch --transport registry ghcr.io/your-username/your-repo-name:stable-testing
-sudo systemctl reboot
-```
-
-Then, as your user:
-
-```bash
-ujust install-default-apps    # Homebrew: the default Brewfile
-ujust install-dev-tools       # Homebrew: the development Brewfile
-ujust configure-dev-groups    # add yourself to docker and libvirt
-ujust install-config          # re-apply the image defaults, backing up yours
-```
-
-First boot unpacks Homebrew and installs the declared Flatpaks; both need a
-network connection. Check them with `systemctl status brew-setup.service` and
-`systemctl status flatpak-preinstall.service`.
-
-## Local testing
-
-```bash
-just build            # build the container image
-just build-qcow2      # build a QCOW2 disk image
-just run-vm-qcow2     # boot it in a browser-based VM
-just build-iso        # build an installer ISO
-just test-unit        # run the test suite
-```
-
-## Troubleshooting
-
-[The `troubleshooting` skill](.agents/skills/troubleshooting/SKILL.md) covers
-build, CI, and runtime failures symptom-first. The two most common first-boot
-surprises:
-
-- **No Flatpaks.** `flatpak-preinstall.service` needs a network connection and
-  reports success even when it cannot reach Flathub, so a first boot before
-  Wi-Fi is configured installs nothing. Reboot once you are online.
-- **No `brew`.** `brew-setup.service` unpacks Homebrew on first boot; check its
-  status before reaching for a reinstall.
-
-## Community
+skywavelinux
 
 - [Universal Blue Discord](https://discord.gg/WEu6BdFEtp)
 - [bootc discussions](https://github.com/bootc-dev/bootc/discussions)
+- [Book: The Era of Atomic Linux](https://skywavelinux.com/atomic-linux)
 
-## Learn more
+### Learn more
 
 - [Universal Blue](https://universal-blue.org/)
 - [bootc](https://containers.github.io/bootc/)
 - [Project Bluefin contributing guide](https://docs.projectbluefin.io/contributing/)
 
-## Contributing
+### Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+
+---
+This repository is still under construction!

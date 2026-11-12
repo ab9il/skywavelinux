@@ -1,7 +1,7 @@
 ###############################################################################
 # PROJECT NAME CONFIGURATION
 ###############################################################################
-# Name: finpilot
+# Name: skywavelinux
 #
 # The authoritative name at publish time is the repository name: build-image.yml
 # derives IMAGE_NAME from ${{ github.event.repository.name }} and pushes the
@@ -54,8 +54,8 @@ FROM quay.io/fedora-ostree-desktops/silverblue:44@sha256:33eb444752caa95fb778874
 
 # Image identity - these define how bootc, fastfetch, and the ublue ecosystem
 # recognize your image. Change these to match your project name.
-ARG IMAGE_NAME="finpilot"
-ARG IMAGE_VENDOR="projectbluefin"
+ARG IMAGE_NAME="skywavelinux"
+ARG IMAGE_VENDOR="ab9il"
 ARG UBLUE_IMAGE_TAG="stable"
 # Supplied by `just build` from the base image's FROM line.
 ARG BASE_IMAGE_NAME=""
@@ -105,6 +105,18 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build/20-packages-and-services.sh
 
+### DESKTOP
+## Replaces the inherited GNOME desktop with niri and the Noctalia shell, and
+## swaps gdm -- which cannot outlive gnome-shell -- for greetd. After the
+## package phase so the removal sees a settled package set, before cleanup so
+## its verification runs against the image as it will ship.
+RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
+    --mount=type=cache,dst=/var/cache/libdnf5 \
+    --mount=type=cache,dst=/var/cache/rpm-ostree \
+    --mount=type=tmpfs,dst=/boot \
+    --mount=type=tmpfs,dst=/tmp \
+    /ctx/build/65-niri-noctalia.sh
+
 ### CLEANUP
 ## Finalises package and Flatpak sources, then prunes build artifacts before
 ## linting. /run is deliberately not mounted as tmpfs here: the script must
@@ -128,10 +140,10 @@ RUN rm -rf /opt && ln -s /var/opt /opt
 ## builds and CI supply the dynamic values through `just build`; keeping these
 ## ARGs late prevents a new version or timestamp from invalidating package and
 ## overlay layers above.
-ARG IMAGE_DESC="My Customized Universal Blue Image"
+ARG IMAGE_DESC="Skywave Linux, image-based Linux for global software defined radio."
 ARG IMAGE_CREATED=""
 ARG IMAGE_LOGO_URL="https://avatars.githubusercontent.com/u/120078124?s=200&v=4"
-ARG IMAGE_KEYWORDS="bootc,ublue,universal-blue"
+ARG IMAGE_KEYWORDS="bootc,ublue,universal-blue,niri"
 ARG IMAGE_REF="main"
 ## The commit the image was built from. It is declared here, with the other
 ## volatile metadata, so a new commit only invalidates the label layer.
