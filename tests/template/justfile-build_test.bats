@@ -200,7 +200,7 @@ podman_build_args() {
     local args
     args="$(podman_build_args)"
     [[ "${args}" == *"--build-arg IMAGE_NAME=skywavelinux"* ]]
-    [[ "${args}" == *"--build-arg IMAGE_VENDOR=projectbluefin"* ]]
+    [[ "${args}" == *"--build-arg IMAGE_VENDOR=ab9il"* ]]
     [[ "${args}" == *"--build-arg UBLUE_IMAGE_TAG=stable"* ]]
     [[ "${args}" == *"--build-arg BASE_IMAGE_NAME=silverblue"* ]]
 }
