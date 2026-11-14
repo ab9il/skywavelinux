@@ -175,7 +175,6 @@ jobs:
           }
 
           # --- FIX START ---
-          # --- FIX START ---
           # Guarantee the default tag is present even when generate-tags omits it.
           # This mirrors the production path's add_tag("${DEFAULT_TAG}") at the bottom
           # and satisfies the contract that the mutable consumer tag is always published.
