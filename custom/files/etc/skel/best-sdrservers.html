@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- am-streamer application version 3.0 -->
+    <!-- Copyright 2025, Philip Collier. All rights reserved. -->
+<head>
+    <title>The Best Internet SDR List | A directory of the best WebSDR sites for shortwave listening around the world.</title>
+    <style>
+        @viewport {
+    width:100vw;
+    zoom:1.0;
+}
+
+@page {
+    size:A4;
+    width:100vw;
+    font-size:100%;
+    background-color:#030309;
+}
+
+body {
+    max-width:100vw;
+    color:#CCCCD0;
+    background-color:#030309;
+    font-family:"Noto Sans","Liberation Sans",Roboto,sans-serif,
+    Helvetica,Verda,"Noto Sans Mono","Liberation Mono",monospace;
+    font-size:100%;
+    font-weight:400;
+    text-justify:auto;
+    padding:0px;
+    margin:auto;
+}
+
+* {font-size:100%;font-weight:400;color:#CCCCD0;background-color:#030309;}
+a:link {text-decoration:none;color:#5CB3FF;}
+a:visited {color:#F190FF;}
+a:hover {color:#FEFEFF;}
+a.hugefont:link, a.hugefont:visited, a.hugefont:hover {color:#D03570;}
+a.littlefont:link, a.littlefont:visited {font-size:85%;color:#CCCCD0;}
+a.littlefont:hover {font-weight:700;color:#CCCCD0;}
+a.regfont:link, a.regfont:visited {font-size:100%;color:#CCCCD0;}
+a.regfont:hover {font-weight:700;color:#CCCCD0;}
+a.stations:link, a.stations:visited {color:#1FC6ED;background-color:#0B1A2A;}
+a.stations:hover {color:#DDDDFF;background-color:#094582;}
+b {background-color:inherit;color:#CCCCD0;font-size:100%;font-weight:700;}
+b.red {color:#FF0000;}
+b.amber {color:#CC8400;}
+b.amber:hover {color:#FFFFFF;}
+blockquote {font-family:monospace;color:#CCCCD0;background-color:#304358;}
+button {float:left;padding-left:4px;padding-right:4px;margin:4px;
+border:1px solid #1B3060;border-radius:2px;cursor:pointer;font-weight:500;font-size:100%;
+color:#CCCCD0;background-color:#1B3060;}
+button:hover {background-color:#3758A2;color:#FFFFFF;border:1px solid #3758A2;}
+button:active {background-color:#3758A2;color:#FFFFFF;border:1px solid #FFFFFF;}
+button.tablinks {float:none;font-size:105%;font-weight:400;color:#BBBBDD;background-color:#003366;
+padding:7px;border:1px solid #003366;margin:2px;}
+button.tablinks:hover {color:#DDDDFF;background-color:#006699;cursor:pointer;
+padding:7px;border:1px solid #006699;}
+button.tablinks:active {background-color:#006699;color:#DDDDFF;padding:7px;border:1px solid #DDDDFF;}
+button.tablinks.active {background-color:#006699;color:#FFAD19;padding:7px;border:1px solid #003366;}
+button.talltabs {float:none;color:#9999BB;background-color:#304358;min-width:100px;font-size:150%;
+font-weight:400;padding:2px 6px 2px 6px;border:1px solid #304358;margin:2px;}
+button.talltabs:hover {color:#DDDDFF;background-color:#304358;cursor:pointer;
+padding:2px 6px 2px 6px;border:1px solid #304358;margin:2px}
+button.talltabs:active {background-color:#6586A9;color:#DDDDFF;padding:2px 6px 2px 6px;border:1px solid #6586A9;margin:2px}
+button.talltabs.active {background-color:#304358;color:#FFAD19;padding:2px 6px 2px 6px;border:1px solid #304358;margin:2px}
+button.places {float:none;width:20vw;min-width:110px;font-size:100%;font-weight:400;color:#BBBBDD;background-color:#003366;
+padding:7px;border:1px solid #003366;margin:2px;}
+button.places:hover {color:#DDDDFF;background-color:#006699;cursor:pointer;
+padding:7px;border:1px solid #006699;}
+button.places:active {background-color:#006699;color:#DDDDFF;padding:7px;border:1px solid #DDDDFF;}
+button.places.active {background-color:#006699;color:#FFAD19;padding:7px;border:1px solid #003366;}
+button.stations {font-size:95%;line-height:1.0;display:inline-block;width:25%;text-align:center;
+border:1px solid #304358;border-radius:4px;cursor:pointer;color:#1FC6ED;
+background-color:#0B1A2A;margin:2px;}
+button.stations:hover {line-height:1.0;background-color:#094582;border:1px solid #245E9A;}
+button.stations:active {line-height:1.0;color:#DDDDFF;background-color:#094582;border:1px solid #DDDDFF;}
+.stations.active {line-height:1.0;color:#DDDDFF;background-color:#094582;border:1px solid #DDDDFF;}
+.stations.focused {line-height:1.0;color:#BBBBDD;background-color:#094582;border:1px solid #245E9A;}
+button.contents {line-height:1.1;background-color:#030309;clear:both;
+padding:0;margin:0;border:0px;cursor:pointer;font-size:110%;font-weight:400;color:#9999BB;
+text-align:left;}
+button.contents:hover {color:#FFFFFF;}
+button.contents:active {color:#FFFFFF;background-color:#3758A2;}
+button.contents.active {color:#FFAD19}
+button2 {float:left;padding:4px 15px;margin:3px;border:2px;
+border-radius:2px;cursor:pointer;text-align:center;font-weight:400;font-size:100%;
+color:#CCCCD0;background-color:#1B3060;}
+button2:hover {background-color:#3758A2;color:#FFFFFF;}
+button2:active {padding:2px 13px;border:2px solid #FFFFFF;
+border-radius:2px;background-color:#3758A2;color:#FFFFFF;}
+button3 {float:left;padding-left:4px;padding-right:4px;
+border:2px;border-radius:2px;margin:4px;cursor:pointer;text-align:left;
+font-weight:600;font-size:105%;color:#20CCCC;}
+button4 {display:inline-block;width:25%;text-align:center;border:1px solid #304358;
+border-radius:4px;cursor:pointer;font-size:100%;font-weight:400;color:#20CCCC;
+background-color:#0B1A2A;margin:auto;padding:auto;}
+button4:hover {color:#CCCCD0;background-color:#094582;border:1px solid #245E9A;}
+button4:active {color:#CCCCD0;background-color:#094582;border:1px solid #FFFFFF;}
+button5 {float:left;padding:4px 15px;margin:3px;border:2px;
+border-radius:2px;cursor:pointer;text-align:center;font-weight:400;font-size:100%;
+color:#CCCCD0;background-color:#304358;}
+button5:hover {background-color:#6586A9;color:#FFFFFF;}
+button5:active {padding:2px 13px;border:2px solid #FFFFFF;
+border-radius:2px;background-color:#6586A9;color:#FFFFFF;}
+i {background-color:inherit;}
+input[type="text"] {border:2px solid #20CCCC;margin-left:3px;margin-right:3px;}
+input[type="radio"]:first-child {margin-left:1px;padding-left:1px;margin-right:1px;}
+input[type="button"] {padding-left:5px;padding-right:5px;border:1px;
+border-radius:2px;margin:4px;color:#20CCCC;background-color:#245E9A;}
+input[type="button"]:hover {color:#CCCCD0;background-color:#304358;
+cursor:pointer;}
+input[type="button"]:active {border:1px solid #FFFFFF;border-radius:2px;
+cursor:pointer;color:#CCCCD0;background-color:#304358;}
+input[type="submit"] {padding:4px 6px;border:1px;margin:4px;
+border-radius:2px;cursor:pointer;color:#20CCCC;background-color:#304358;}
+input[type="submit"]:hover {color:#CCCCD0;background-color:#245E9A;}
+input[type="submit"]:active {padding:3px 5px;border:1px solid #FFFFFF;
+border-radius:2px;margin:4px;color:#CCCCD0;background-color:#304358;}
+label:hover {background-color:#303040;}
+div.c1 {float:right;margin:0 0 5px 5px;}
+div.c2 {float:left;margin:0 0 5px 5px;}
+div.c10 {font-size:70%;text-align:left;}
+div.c20 {display:block;float:left;padding:5px;}
+div.c21 {display:block;float:right;padding:5px;}
+div.c22 {width:225px;margin:auto;}
+div.ads1 {height:60vh;max-height:150px;width:82vw;max-width:500px;float:left;margin:10px;}
+div.ads {display:block;float:left;padding:3px;width:100%;}
+div.adbar {margin-left:auto;margin-right:auto;padding:0;}
+div.amber {color:#CC8400;}
+div.article {float:left;line-height:1.5;margin-top:5px;margin-bottom:15px;
+width:80vw;max-width:85vw;}
+div.bigfont {font-weight:600;font-size:130%;padding:7px;}
+div.bookbar {height:315px;width:80vw;float:left;overflow:hidden;}
+div.buttonbar {margin-left:auto;margin-right:auto;height:40px;padding-top:5px;
+padding-bottom:5px}
+div.button {float:left;padding-left 5px;padding-right:5px;}
+div.center {margin-left:auto;margin-right:auto;margin-top:10px;margin-bottom:10px;}
+div.clear {height:0;line-height:0px;font-size:0;clear:both;}
+div.column {float:left;width:35vw;padding:0 5vw 0 0;}
+div.column4 {float:left;width:18vw;height:250px;padding-left:8px;}
+div.disclosure {padding-top:10px;padding-bottom:10px;text-align:justify;
+font-style:italic;font-size 100%;}
+div.first {width:80vw;height:60px;float:left;}
+div.header {width:80vw;margin:0 auto;}
+div.hugefont {padding-right:5px;float:left;width:600px;font-weight:600;
+font-size:220%;color:#D03570;}
+div.imagebar {margin-left:auto;margin-right:auto;width:80vw;
+padding-top:5px;padding-bottom:5px;overflow:hidden;}
+div.image {float:left;padding:15px 5px;}
+div.index {line-height:1.5;}
+div.inner {width:80vw;font-size:100%;margin:0 auto;}
+div.intro {font-size:100%;width:80vw;}
+div.list0 {height:275px;width:80vw;font-size:100%;}
+div.list1 {height:150px;width:60vw;font-size:100%;font-weight:600;}
+div.listitem {float:left;width:150px;padding:4px;font-size:100%;font-weight:600;}
+div.next {float:left;height:40px;width:550px;line-height:1.5;}
+div.player {width:165px;margin-left:auto;margin-right:auto;}
+div.quotes {font-family:monospace;color:#CCCCD0;background-color:#1B3060;
+width:80vw;max-width:85vw;margin-top:10px;margin-bottom:10px;}
+div.region {width:80vw;display:block;margin:auto;}
+div.rightside {width:336px;top:2px;left:685px;position:fixed;}
+div.tabs {width:80vw;display:block;margin:auto;}
+div.video {float:left;padding:5px;}
+font.adtext1, font.adtext2 {color:#CC8400;font-size:130%;font-family:"Times New Roman";}
+font.adtext1:hover, font.adtext2:hover {color:#FFFFFF;}
+font.adtext3 {color:#CCCCD0;font-size:120%;font-family:"Times New Roman";}
+font.mini {color:#CCCCD0;font-size:85%;}
+h1 {font-family:"Helvetica Neue",Helvetica,Roboto,Arial,"Times New Roman";text-align:left;
+font-size:170%;font-weight:600;color:#D03570;max-width:95vw;}
+h1.c2 {text-align:center;font-size:170%;font-weight:600;color:#D03570;max-width:95vw;}
+h1.title {text-align:left;padding:0;padding-top:5px;padding-bottom:5px;margin:0;
+font-size:170%;font-weight:600;color:#D03570;max-width:95vw;}
+h2 {font-family:"Helvetica Neue",Helvetica,Roboto,Arial,"Times New Roman";margin-top:15px;
+padding-top:20px;text-align:left;font-size:130%;font-weight:400;color:#00CCCC;max-width:82vw;}
+h2.c3 {text-align:center;font-size:130%;font-weight:400;color:#00CCCC;max-width:82vw;}
+h2.c6 {margin-top:15px;text-align:center;font-size:130%;font-weight:400;color:#00CCCC;max-width:82vw;}
+h3 {font-family:"Helvetica Neue",Helvetica,Roboto,Arial,"Times New Roman";margin-top:15px;
+padding-top:20px;text-align:left;font-size:100%;font-weight:600;color:#00CCCC;max-width:82vw;}
+h3.c6 {margin-top:15px;text-align:center;font-size:100%;font-weight:600;color:#00CCCC;max-width:82vw;}
+h4 {font-family:"Helvetica Neue",Helvetica,Roboto,Arial,"Times New Roman";font-size:100%;
+font-weight:600;color:#61d6d6;max-width:82vw;}
+h4.c6 {font-size:100%;font-weight:600;color:#61d6d6;max-width:82vw;}
+iframe.ads1 {border:none;height:30vh;max-height:85px;width:80vw;max-width:82vw;padding:0;margin:0;}
+img {width:auto;max-width:100%;height:auto;padding:5px;}
+li {padding-top:2px;padding-bottom:2px;max-width:82vw;}
+ol {margin-left:15px;margin-bottom:10px;padding-left:10px;padding-right:10px;max-width:85vw;}
+ul {list-style-type:square;margin-left:15px;margin-bottom:10px;padding-left 10px;padding-right:10px;max-width:85vw;}
+mark {background-color:#999999;color:#000000;}
+mark2 {color:#61d6d6;}
+mark3 {color:#FF2D2D;}
+pre {text-align:left;font-weight:400;font-size:100%;color:#CCCCD0;margin-bottom:15px;overflow-x:auto;}
+pre.amber {text-align:left;font-weight:400;font-size:100%;color:#CC8400;margin-bottom:15px;}
+pre.c19 {text-align:left;font-weight:400;font-size:100%;color:#CCCCD0;margin-bottom:15px;}
+pre.c18 {text-align:left;font-weight:400;font-size:100%;color:#CCCCD0;margin-bottom:15px;}
+pre.code {font-family:monospace;font-weight:300;font-size:110%;background-color:#052135;
+padding-top:10px;padding-bottom:5px;}
+pre.contents {font-family:monospace;font-weight:300;font-size:110%;line-height:1.5;
+padding-top:10px;padding-bottom:5px;}
+pre.quotes {font-family:monospace;font-size:110%;color:#CCCCD0;background-color:#1B3060;}
+span.huge {font-size:120%;color:#00CCCC;font-weight:400;}
+strong.colorful {color:#00CCCC;}
+summary {font-weight:600;}
+summary.cyan:hover, summary.amber:hover {color:#CCCCD0;}
+summary.cyan {font-weight:600;color:#00CCCC;}
+summary.amber {font-weight:600;color:#CC8400;}
+table {padding:5px;border-spacing:5px;max-width:85vw;}
+table.c12 {height:58px;text-align:left;
+background-color:#050509;opacity:0.8;filter:alpha(opacity=80);max-width:85vw;}
+table.c15 {margin-left:auto;margin-right:auto;vertical-align:top;
+background-color:#050509;opacity:0.8;filter:alpha(opacity=80);max-width:85vw;}
+table.c17 {margin-left:auto;margin-right:auto;vertical-align:top;
+background-color:#050509;opacity:0.8;filter:alpha(opacity=80);max-width:85vw;}
+td.c16 {vertical-align:top;background-color:#ffffff;font-size:100%;}
+p {font-size:100%;text-align:justify;padding-top:5px;padding-bottom:5px;
+max-width:85vw;background-color:inherit;}
+p.c4 {text-align:justify;padding-top:5px;padding-bottom:5px;max-width:85vw;}
+p.c5 {text-align:center;padding-top:5px;padding-bottom:5px;max-width:85vw;}
+p.c6 {text-align:right;padding-top:5px;padding-bottom:5px;max-width:85vw;}
+/*-----------BlinkingText------------*/
+#blink_effect {color:#dd0000;transition:0s;}
+/*------------DropdownMenu------------------*/
+.dropdown-container {display:flex;gap:20px;}
+.dropdown {position:relative;display:inline-block;}
+.dropdown-content {display:none;position:absolute;color:#DDDDFF;background-color:#303030;min-width:160px;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);z-index:1;}
+.dropdown-content a {color:#BBBBDD;padding:12px 16px;text-decoration:none;display:block;}
+.dropdown-content a:hover {color:#FFAD19;background-color:#006699;}
+.show {display:block;}
+
+
+    </style>
+</head>
+
+<body>
+<div class="inner">
+<h1>The Best Internet SDR List</h1>
+lltabs</span></span>
+
+<p>You can tune in shortwave or mediumwave radio for free, around the world, <i>right now</i> on the radios
+linked below! When the SDR renders in your browser, it will be on the frequency and in the mode you selected,
+also with a proper filter bandpass for either single sideband or AM. These are hand picked and sorted for
+top level, lab quality performance.
+</p>
+
+<p style="font-size:25px;margin:0;buffer:0;"><b>Preset:</b></p>
+<div style="display:flex;justify-content:left;">
+<input type="text" id="frequency" name="frequency" placeholder="Enter Frequency (kHz)" onchange="tuneSDR(value);">
+<div style="height=15px;float:left;">
+<button onclick="setMode('am')">AM</button>
+<button onclick="setMode('usb')">USB</button>
+<button onclick="setMode('lsb')">LSB</button>
+</div>
+</div>
+<div class="clear"></div>
+<br>
+
+<!-- set up the tabs -->
+<div class="tabs">
+  <button class="talltabs" onclick="openRegion(event, 'NEWTECH')" id="defaultOpen">New Technology Wideband WebSDRs</button>
+  <button class="talltabs" onclick="openRegion(event, 'KIWI')">KiwiSDR Sites</button>
+  <button class="talltabs" onclick="openRegion(event, 'CLASSIC')">Classic WebSDRs</button>
+  <button class="talltabs" onclick="openRegion(event, 'ABOUT')">About</button>
+</div>
+<div class="clear"></div>
+
+<br>
+
+<!-- content for first list tab -->
+<div id="NEWTECH" class="tabcontent">
+
+<a href="http://lu5dnpwebsdr.sytes.net:8901/?frequency=10000000&modulation=am" target="_blank">Wideband NovaSDR, LU5DNP, Saladillo, Argentina</a><br>
+<a href="http://cgm.id.au:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Broomfield, Australia</a><br>
+<a href="http://vk1cm.ddns.net:8074/?f=1000/-5000,5000amz9&1hz" target="_blank">Web-888, VK1CM, Canberra, Australia</a><br>
+<a href="https://oe9ghv.instance.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, OE9GHV, Alberschwende, Austria</a><br>
+<a href="https://oe2xzr.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, OE2XZR, Gaisberg Salzburg Austria</a><br>
+<a href="https://oe3gbb-1.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, OE3GBB, Wartmannstetten, Austria</a><br>
+<a href="https://websdr.heppen.be/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, ON5HB, Heppen, Belgium</a><br>
+<a href="https://on8st.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, ON8ST, Keerbergen, Belgium</a><br>
+<a href="https://onl-odk.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, ONL-ODK, Koksijde, Belgium</a><br>
+<a href="https://on6ure-lte.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, ON6URE-LTE Lomardsijde, Westende, Belgium</a><br>
+<a href="http://web888bsb.proxy.rx-888.com:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Web-888, Brasilia, Brazil</a><br>
+<a href="https://pp5rca.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, PP5RCA, SDR Itajaí - SC Brazil</a><br>
+<a href="http://ciw321.cfars.ca:8175/?f=1000/-5000,5000amz9&1hz" target="_blank">Web-888, VE6JY, Lamont, Alberta, Canada</a><br>
+<a href="http://ve3nsv.ddns.net:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Kitchener, Ontario, Canada</a><br>
+<a href="https://ve2sus.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, Montreal, Quebec, Canada</a><br>
+<a href="http://9a7aof.ddns.net:8905/?frequency=10000000&modulation=am" target="_blank">Wideband NovaSDR, 9A7OF, Bisag, Croatia</a><br>
+<a href="http://ilveskuiskaaja.ddns.net:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Rauma, Finland</a><br>
+<a href="http://betajbk.proxy.rx-888.com:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Tervakoski, Finland</a><br>
+<a href="https://f4vtq.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, F4VTQ, Creue, France</a><br>
+<a href="https://f5vbd.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, F5VBD, St. Jean d'Arvey, France</a><br>
+<a href="http://dl1bajkiwisdr.ddns.net:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Hooksiel, Germany</a><br>
+<a href="https://dig647.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, DIG647, Moenchengladbach, Germany</a><br>
+<a href="http://dl8las.dyndns.org:8075/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, DL8AS, Trent, Germany</a><br>
+<a href="http://home.dg9vh.de:8088/?f=1000/-5000,5000amz9&1hz" target="_blank">Web-888, Voelklingen, Germany</a><br>
+<a href="http://hamradio.sv2yj.live:9002/?frequency=10000000&modulation=am" target="_blank">Wideband NovaSDR, SV2YJ, Alexandria, Greece</a><br>
+<a href="https://sv1btl.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, SV1BTL, Athens, Greece</a><br>
+<a href="http://web-888.no-ip.org:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Web-888, SV1BTL, Athens, Greece</a><br>
+<a href="https://vu2cpl.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, VU2CPL, Bangalore, India</a><br>
+<a href="https://vu24dx.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, VU24DX, Kozhikode, India</a><br>
+<a href="http://emeraldsdr1.ddns.net:8074/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Carlow, Ireland</a><br>
+<a href="http://web888.minish.org:8075/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Castlebar, Co Mayo, Ireland</a><br>
+<a href="https://ei4hq.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, Cobh, Cork Harbour, Ireland</a><br>
+<a href="http://92.51.204.2:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Dunshaughlin, Ireland</a><br>
+<a href="https://sardinia-sdr.ddns.net/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, Sardinia - Perfugas, Italy</a><br>
+<a href="http://134.90.246.245:8074/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Chiarmonte Gulfi (Sicily), Italy</a><br>
+<a href="http://jf0fumkiwi.ddns.net:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Nagano, Japan</a><br>
+<a href="http://ja7kbr.proxy.rx-888.com:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Tokyo, Japan</a><br>
+<a href="http://pi4vnw.pa9x.com:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, PI4VNW, MookHoek, Netherlands</a><br>
+<a href="https://ph5hp.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, PH5HP, Gytsjerk, Netherlands</a><br>
+<a href="https://pd2rps.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, PD2RPS, Scharsterbrug, Netherlands</a><br>
+<a href="http://bwa-lb.entrydns.org:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, PA3HEA, Zoetermeer, Netherlands</a><br>
+<a href="http://zl2p.proxy.rx-888.com:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Masterton, New Zealand</a><br>
+<a href="https://zp6kfx.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, ZP6KFX, Areguá, Paraguay</a><br>
+<a href="http://websdr.ru/?frequency=10000000&modulation=am" target="_blank">Wideband NovaSDR, Cherepovets, Russia</a><br>
+<a href="http://websdrsm6oeq.ddns.net:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, SM6OEQ, Tjörn, Sweden</a><br>
+<a href="http://hb9re.ddns.net:8083/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888 (VHF-Airband), Bodenberg, Switzerland</a><br>
+<a href="http://hb9fbs.dyndns.org:8074/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Cadempino - Lugano, Switzerland</a><br>
+<a href="http://swiss.ham-radio-op.net:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888 (VHF-Airband), Lausanne, Switzerland</a><br>
+<a href="https://m9psy.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, M9PSY, Dalgety Bay, UK</a><br>
+<a href="https://m9psy-1.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, M9PSY (Recr 2), Dalgety Bay, UK</a><br>
+<a href="http://gm4dij.proxy.rx-888.com:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, GM4DIJ, Edinburgh, UK</a><br>
+<a href="https://stuey3d.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, STUEY3D - Moulton, UK</a><br>
+<a href="https://m0xdk-1.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, M0XDK-1 Northampton, UK</a><br>
+<a href="https://reading-ubersdr.m0lte.uk/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, M0LTE, Reading, UK</a><br>
+<a href="http://wessex.zapto.org:8035/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, Wessex, UK</a><br>
+<a href="http://pjmarsh.co.uk:9080/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, M0EYT, Wimborne, UK</a><br>
+<a href="http://sw_web_888_sdr.proxy.rx-888.com:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Phoenix, Arizona, USA</a><br>
+<a href="http://na5b.com:8080/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, NA5B, Washington, DC, USA</a><br>
+<a href="https://websdr.lumpkinschools.com/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, Dahlonega, Georgia, USA</a><br>
+<a href="https://ki4fbl.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, KI4FBL, Aashland, Kentucky, USA</a><br>
+<a href="https://kb5avy.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, KB5AVY, New Orleans, Louisiana, USA</a><br>
+<a href="http://sdr.ekarg.com:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Becker, Minnesota, USA</a><br>
+<a href="http://sdr.aldude999.net/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Oklahoma City, Oklahoma, USA</a><br>
+<a href="https://ubersdr.k3gmq.com/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, K3GMQ, Buckingham Pennsylvania, USA</a><br>
+<a href="https://ubersdr.k3fef.com/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, K3FEF, Milford Pennsylvania, USA</a><br>
+<a href="http://kb5ag.ddns.net:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, KB5AG, Knoxville, Tennessee, USA</a><br>
+<a href="http://ntx-keller.proxy.rx-888.com:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, Keller, Texas, USA</a><br>
+<a href="http://cbaum.proxy.rx-888.com:8073/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, McKinney, Texas, USA</a><br>
+<a href="https://n7qxb.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, N7QXB, Holladay, Utah, USA</a><br>
+<a href="http://sdr.k1vl.com:8078/?f=1000/-5000,5000samz9&1hz" target="_blank">Web-888, K1VL, Shrewsbury, Vermont, USA</a><br>
+<a href="https://kk4fl.tunnel.ubersdr.org/v2/?freq=10000000&mode=am&bwl=-5000&bwh=5000&zoom_freq=10000000&zoom_bw=100.0" target="_blank">RX-888 + UberSDR, KK4FL, Northern Neck, Virginia USA</a><br>
+
+
+</div>
+<!-- first tab complete -->
+
+<!-- content for second list tab -->
+<div id="KIWI" class="tabcontent">
+
+<a href="http://n0bqv.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">[N0BQV] [Republic, Missouri. USA</a><br>
+<a href="http://sdr.autreradioautreculture.com:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">TREMOLAT (24), FRANCE</a><br>
+<a href="http://22555.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Tellico Plains, TN USA</a><br>
+<a href="http://ssi.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Bakersville, NC, USA</a><br>
+<a href="http://mtkiwi.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Stevensville, MT</a><br>
+<a href="http://22164.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">White House, Tennesee</a><br>
+<a href="http://23175.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Pine Bush, NY 12566</a><br>
+<a href="http://22033.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">W. Montana, USA</a><br>
+<a href="http://kiwisdr.njctech.com:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Sutton, MA USA</a><br>
+<a href="http://kiwisdr.k3fef.com:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Milford, PA USA</a><br>
+<a href="http://sdr.k1vl.com:8074/?f=1000/-5000,5000amz9&1hz" target="_blank">Shrewsbury, Vermont, USA</a><br>
+<a href="http://sdr.k1vl.com:8075/?f=1000/-5000,5000amz9&1hz" target="_blank">Shrewsbury, Vermont, USA</a><br>
+<a href="http://44.31.191.63:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Mullingar, Westmeath, Ireland</a><br>
+<a href="http://22948.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">FLORES ISLAND,AZORES</a><br>
+<a href="http://sdr.k1vl.com:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Shrewsbury, Vermont, USA</a><br>
+<a href="http://sdr.k1vl.com:8076/?f=1000/-5000,5000amz9&1hz" target="_blank">Shrewsbury, Vermont, USA</a><br>
+<a href="http://22338.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Natural Bridge, VA</a><br>
+<a href="http://misdr.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Northfield Township, Michigan, USA</a><br>
+<a href="http://wessex.zapto.org:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">South West England, UK</a><br>
+<a href="http://g8ure.ddns.net:8077/?f=1000/-5000,5000amz9&1hz" target="_blank">Chichester UK</a><br>
+<a href="http://21748.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Free Union, VA, USA</a><br>
+<a href="http://sdr.k1vl.com:8077/?f=1000/-5000,5000amz9&1hz" target="_blank">Shrewsbury, Vermont, USA</a><br>
+<a href="http://la6lutha.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Cha-Am, Thailand</a><br>
+<a href="http://nd8d1.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Oregonia, Ohio</a><br>
+<a href="http://sigmasdr.ddns.net:8076/?f=1000/-5000,5000amz9&1hz" target="_blank">Holland, MA</a><br>
+<a href="http://sdr.hfunderground.com:8076/?f=1000/-5000,5000amz9&1hz" target="_blank">Westminster, MD, USA</a><br>
+<a href="http://sigmasdr.ddns.net:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Holland, MA</a><br>
+<a href="http://www.f5lfe.fr:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Marsangy (89), France</a><br>
+<a href="http://wessex.zapto.org:8074/?f=1000/-5000,5000amz9&1hz" target="_blank">Wessex - KiwiSDR - G8JNJ - South West UK</a><br>
+<a href="http://22920.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Eganville, Canada</a><br>
+<a href="http://g8ure.ddns.net:8074/?f=1000/-5000,5000amz9&1hz" target="_blank">Chichester UK</a><br>
+<a href="http://g8ure.ddns.net:8078/?f=1000/-5000,5000amz9&1hz" target="_blank">Chichester UK</a><br>
+<a href="http://ag4nd.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Jackson TN, USA</a><br>
+<a href="http://sdr.hfunderground.com:8074/?f=1000/-5000,5000amz9&1hz" target="_blank">Westminster, MD, USA</a><br>
+<a href="http://50.48.154.196:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Victor, New York</a><br>
+<a href="http://sigmasdr.ddns.net:8074/?f=1000/-5000,5000amz9&1hz" target="_blank">Holland, MA</a><br>
+<a href="http://g8ure.ddns.net:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Chichester UK</a><br>
+<a href="http://kiwisdr.k3fef.com:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Milford, PA USA</a><br>
+<a href="http://21662.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Empire, Michigan, MI USA</a><br>
+<a href="http://ab9mq.hopto.org:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Carlock, Illinois</a><br>
+<a href="http://sa4bna.hopto.org:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Glava , Arvika</a><br>
+<a href="http://71.51.165.29:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Free Union, VA, USA</a><br>
+<a href="http://g8ure.ddns.net:8071/?f=1000/-5000,5000amz9&1hz" target="_blank">Chichester UK</a><br>
+<a href="http://22448.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">BIRMINGHAM, ALABAMA, USA</a><br>
+<a href="http://22799.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Havant, Hampshire UK</a><br>
+<a href="http://117.243.203.60:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Kozhikode ,Kerala,India</a><br>
+<a href="http://sdr.hfunderground.com:8078/?f=1000/-5000,5000amz9&1hz" target="_blank">Westminster, MD, USA</a><br>
+<a href="http://22059.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Empire, Michigan MI US</a><br>
+<a href="http://f4joy.ddns.net:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">PRADIERS DEP 15 JN15LG, FRANCE</a><br>
+<a href="http://irelandnorthwest.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Ireland</a><br>
+<a href="http://g8ure.ddns.net:8079/?f=1000/-5000,5000amz9&1hz" target="_blank">Chichester UK</a><br>
+<a href="http://sigmasdr.ddns.net:8075/?f=1000/-5000,5000amz9&1hz" target="_blank">Holland, MA</a><br>
+<a href="http://listener2.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">West Mountain, Dutchess County, NY, USA</a><br>
+<a href="http://22036.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Lodi, NY USA</a><br>
+<a href="http://kx4az-t2.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Tustin, Michigan (USA)</a><br>
+<a href="http://f4kiy.ddns.net:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Brettnach F57320</a><br>
+<a href="http://g8ure.ddns.net:8072/?f=1000/-5000,5000amz9&1hz" target="_blank">Chichester UK</a><br>
+<a href="http://g3sdr.com:8076/?f=1000/-5000,5000amz9&1hz" target="_blank">Weston-super-Mare, United Kingdom</a><br>
+<a href="http://g3sdr.com:8079/?f=1000/-5000,5000amz9&1hz" target="_blank">Weston-super-Mare, United Kingdom</a><br>
+<a href="http://178.17.3.34:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Sedlcany, Czech Republic</a><br>
+<a href="http://pb8w.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Assen | Netherlands</a><br>
+<a href="http://22424.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Ireland</a><br>
+<a href="http://irelandnorthwest3.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Ireland</a><br>
+<a href="http://malinheadkiwi.hopto.org:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Malin, County Donegal, Ireland</a><br>
+<a href="http://misdr2.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Northfield Township, Michigan, USA</a><br>
+<a href="http://bern.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Hamburg, Drage, 🇩🇪 Germany 🇩🇪</a><br>
+<a href="http://g3sdr.com:8075/?f=1000/-5000,5000amz9&1hz" target="_blank">Weston-super-Mare, United Kingdom</a><br>
+<a href="http://il38.ddns.net:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Fuerteventura, Canary Islands</a><br>
+<a href="http://kiwisdr.ha2na.com:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Esztergom - GRANTE Tower, Hungary</a><br>
+<a href="http://72.172.110.98:8175/?f=1000/-5000,5000amz9&1hz" target="_blank">Alberta</a><br>
+<a href="http://kr6la.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Whitmore, California</a><br>
+<a href="http://linkz.ddns.net:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Isere, France</a><br>
+<a href="http://kb6c.proxy.kiwisdr.com/?f=1000/-5000,5000amz9&1hz" target="_blank">Stauffer, CA</a><br>
+<a href="http://porky.dahlbros.net:8074/?f=1000/-5000,5000amz9&1hz" target="_blank">Southern Alberta 2</a><br>
+<a href="http://porky.dahlbros.net:8073/?f=1000/-5000,5000amz9&1hz" target="_blank">Southern Alberta 1</a><br>
+
+
+</div>
+<!-- second tab complete -->
+
+<!-- content for third list tab -->
+<div id="CLASSIC" class="tabcontent">
+
+<a href="http://sdr.homeip.net:8901/?tune=729am" target="_blank">DK1ML, Frankfurt / Main, Germany</a><br>
+<a href="http://websdr-jn59nk.ddnss.org:8080/farnham/index.html?tune=729am" target="_blank">Glockenhof, Germany</a><br>
+<a href="http://hamradio.sv2yj.live:8901/?tune=729am" target="_blank">SV2YJ, Alexandria, Greece</a><br>
+<a href="http://sv0xbs.ddns.net:8901/?tune=729am" target="_blank">SV0XBS, Athens, Greece</a><br>
+<a href="http://varadero1000.ddns.net:8901/?tune=729am" target="_blank">SV1TKU, Athens, Greece</a><br>
+<a href="http://sdrkifisia.ddns.net:8901/?tune=729am" target="_blank">Kifisia, Greece</a><br>
+<a href="http://sv1cmg.no-ip.org/?tune=729am" target="_blank">SV1CMG, Lamia, Greece</a><br>
+<a href="http://sv8fxn-naxos.ddns.net:8901/?tune=1000am" target="_blank">SV1FXN, Naxos, Greece</a><br>
+<a href="http://salamisdr22.ddns.net:8906/?tune=1000am" target="_blank">Stavros & SV3YY, Salamina, Greece</a><br>
+<a href="http://sv3gcb.ddns.net:8905/?tune=1000am" target="_blank">SV3GCB, Sparta, Greece</a><br>
+<a href="http://websdr.ewi.utwente.nl:8901/?tune=1000am" target="_blank">Wideband Receiver, Enschede, Netherlands</a><br>
+<a href="http://websdr.printf.cc:8901/?tune=1000am" target="_blank">Silec, Poland</a><br>
+<a href="http://websdr.yo3ggx.ro:8765/?tune=1000am" target="_blank">Breaza, Romania</a><br>
+<a href="http://websdr.ru/?tune=1000am" target="_blank">Cherepovets, Russia</a><br>
+<a href="http://remoteradio.changeip.org:8073/?tune=1000am" target="_blank">Barney's WebSDR, Bedford, UK</a><br>
+<a href="http://websdr1.kfsdr.com:8901/?tune=1000am" target="_blank">KFS, Half Moon Bay, California, USA</a><br>
+<a href="http://kj6eo.com:8901/?tune=1000am" target="_blank">KJ6EO, Santa Clarita, California, USA</a><br>
+<a href="http://na5b.ddns.net:8901/?tune=1000am" target="_blank">NA5B, Washington, DC, USA</a><br>
+<a href="http://k3fef.com:8901/?tune=1000am" target="_blank">K3FEF, Milford, PA, USA</a><br>
+<a href="http://143.55.35.146:8901/?tune=1000am" target="_blank">KF5JMD, Gatesville, Texas, USA</a><br>
+<a href="http://websdr1.sdrutah.org:8901/index1a.html?tune=1000am" target="_blank">SDR "Yellow", Corrine, Utah, USA</a><br>
+<a href="http://websdr2.sdrutah.org:8902/index1a.html?tune=1000am" target="_blank">SDR "Green", Corrine, Utah, USA</a><br>
+<a href="http://websdr3.sdrutah.org:8903/index1a.html?tune=1000am" target="_blank">SDR "Blue", Corrine, Utah, USA</a><br>
+<a href="http://websdr4.sdrutah.org:8904/index1a.html?tune=1000am" target="_blank">SDR "Magenta", Corrine, Utah, USA</a><br>
+<a href="http://websdr5.sdrutah.org:8905/index1a.html?tune=1000am" target="_blank">SDR "Teal", Corrine, Utah, USA</a><br>
+<a href="http://slc2meters.sdrutah.org:8901/?tune=1000am" target="_blank">SDR "Peach", Salt Lake City, Utah, USA (Airband)</a><br>
+<a href="http://201.217.131.106:7900/?tune=1000am" target="_blank">Montevideo, Uruguay</a><br>
+
+
+</div>
+<!-- third tab complete -->
+
+<!-- content for fourth tab -->
+<div id="ABOUT" class="tabcontent">
+
+<div class="imagebar" style="line-spacing: 1.5">
+<details>
+<summary>KiwiSDRs for listening to popular stations:</summary>
+<pre class="contents">
+<a href="https://skywavelinux.com/websdr-mediumwave-list.html" target="_blank">Mediumwave WebSDR</a>
+<a href="https://skywavelinux.com/hfgcs-quick-tune-list.html" target="_blank">HFGCS Military Comms</a>
+<a href="https://skywavelinux.com/aeroradio-list" target="_blank">VOLMET Broadcasts</a>
+<a href="https://skywavelinux.com/aeroradio-list" target="_blank">Oceanic Air Traffic</a>
+</pre>
+</details>
+</div>
+<div class="clear"></div>
+
+<br>
+<p style="padding:0;margin:0;">How to use:</p>
+<ol>
+  <li>Simply enter a frequency, click a mode.</li>
+  <li>Click on a server to open a new tab and start listening as configured.</li>
+  <li>KiwiSDR list updates every three hours; sorted for top 75 by snr.</li>
+  <li>KiwiSDRs on the OpenWebRX interface can tune anywhere from VLF through 30 to 32 MHz.</li>
+  <li>WebSDRs are limited to bands set up by the operator, depending on the hardware.</li>
+  <li>WebSDRs are manually updated as needed.</li>
+  <li>Search by city or country with CTRL - F.</li>
+  <li>Click to download
+  <a href="docs/bestsdrs.pdf" target="_blank">
+  Best KiwiSDR and WebSDR List [PDF]</a>.</li>
+</ol>
+
+</div>
+<!-- fourth tab complete -->
+
+<div class="clear"></div>
+
+<p>The software defined radio servers listed here have been selected for their reception quality.
+Performance and coverage vary depending on hardware, internet bandwidth, and radio conditions at
+individual sites.  This is not an exhaustive list, as servers are excluded for low SNR. The list
+is updated regularly, so be sure to bookmark it and come back often!
+</p>
+
+<p>There is currently no single map which is both updated in a timely manner and combines
+plots for the different types of WebSDRs. To find the sites currently running, within the previous
+half hour, refer to these maps:</p>
+
+<ul>
+    <li><a href="https://sdr-list.xyz" target="_blank">NovaSDR and UberSDR sites</a></li>
+    <li><a href="https://rx.linkfanel.net" target="_blank">KiwiSDRs</a></li>
+    <li><a href="https://www.rx-888.com/web/rx.html" target="_blank">Web-888s</a></li>
+    <li><a href="http://websdr.org/" target="_blank">Classic WebSDRs</a></li>
+</ul>
+
+<p>During peak operating periods, it may be difficult or impossible to use some of the sites.
+The KiwiSDRs have limited channels available.  WebSDR servers can take more users, up to the
+point where CPU capability and internet bandwidth are limiting factors.
+</p>
+
+<p>Software defined radio servers listed here are operated by volunteers, bearing their own expenses
+for the equipment and bandwidth.  Be sure to do what you can to support those sites - linking to them,
+promoting them among your fellow radio listeners, and donating if they have set up a patronage process.
+To the server operators: we appreciate your effort! There are too many places in the world which lack
+good broadcast programming or are hampered by RF noise. What's more, there is something important in
+the ability for an average person, anywhere in the world, to access signals from places where "things
+are happening."
+</p>
+
+<p>If you find interesting action on the bands, give some thought to making an audio recording or screen
+capture video to share on sites such as <a href="https://www.youtube.com/watch?v=laldcd9aCPg" target="_blank">YouTube</a> or
+<a href="https://soundcloud.com/redcrown01" target="_blank">Soundcloud</a>
+</p>
+
+<div class="clear"></div>
+<br>
+<hr>
+<p style="text-align:center;">Best Internet SDR List version 3.0 &copy; 2026 Philip G. Collier. All rights reserved.</p>
+</div>
+
+<!-- javascript for sdr handling -->
+<script type="text/javascript">
+  // Get the element with id="defaultOpen" and click on it (first set of tabs)
+  document.getElementById("defaultOpen").click();
+
+function openRegion(evt, regionName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="talltabs" and remove the class "active"
+  talltabs = document.getElementsByClassName("talltabs");
+  for (i = 0; i < talltabs.length; i++) {
+    talltabs[i].className = talltabs[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(regionName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// set SDR defaults
+var currentMode = 'am';
+var currentFreq = '1000';
+var lowcut = '-5000';
+var highcut = '5000';
+var kiwiZoom = 'z9';
+var webZoom = '?zoom=4';
+
+window.onload = tuneSDR(currentFreq);
+
+function setMode(newMode) {
+  currentMode = newMode;
+  if (currentMode === 'am') { lowcut = '-5000'; highcut = '5000';
+    tuneSDR(currentFreq);}
+  else if (currentMode === 'usb') { lowcut = '40'; highcut = '4000';
+    tuneSDR(currentFreq);}
+  else if (currentMode === 'lsb') { lowcut = '-4000'; highcut = '-40';
+
+    tuneSDR(currentFreq);}
+}
+
+function tuneSDR(newFreq) {
+  currentFreq = newFreq;
+  document.body.innerHTML = document.body.innerHTML.replaceAll(/\?f=.*z9/g, "?f=" + currentFreq + "/" + lowcut + "," + highcut + currentMode + kiwiZoom);
+  document.body.innerHTML = document.body.innerHTML.replaceAll(/tune=.*" /g, "tune=" + currentFreq + currentMode + '" ');
+  document.body.innerHTML = document.body.innerHTML.replaceAll(/frequency=.*" /g, "frequency=" + currentFreq + "000&modulation=" + currentMode + '" ');
+  document.body.innerHTML = document.body.innerHTML.replaceAll(/freq=.*" /g, "freq=" + currentFreq + "000&mode=" + currentMode + "&bwl=" + lowcut + "&bwh=" + highcut + "&zoom_freq=" + currentFreq + "000" + '&zoom_bw=100.0" ');
+  document.body.innerHTML = document.body.innerHTML.replaceAll(/Preset:.*/g, "Preset: " + currentFreq + " kHz " + currentMode + "</b></span>");
+}
+</script>
+</body>
+</html>
