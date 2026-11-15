@@ -151,10 +151,12 @@ install before shipping it: a scope that does not match turns `bootc upgrade`
 into a hard refusal. `tests/contract/image-signing_test.bats` holds the two
 sides together, so changing one without the other fails the suite.
 
-skywavelinux
+### Community & Support
 
+- [Universal Blue Forums](https://universal-blue.discourse.group/)
 - [Universal Blue Discord](https://discord.gg/WEu6BdFEtp)
-- [bootc discussions](https://github.com/bootc-dev/bootc/discussions)
+- [Bluefin Discussions](https://github.com/ublue-os/bluefin/discussions)
+- [Bootc Discussions](https://github.com/bootc-dev/bootc/discussions)
 - [Book: The Era of Atomic Linux](https://skywavelinux.com/atomic-linux)
 
 ### Learn more
