@@ -1,7 +1,8 @@
 # Skywave Linux
 
-## The image-based version of Skywave Linux.
+## Global Software Defined Radio at Your Fingertips
 
+Turn your PC into the ultimate shortwave radio. Skywave Linux is an operating system using bleeding-edge technology to robustly access broadcast media, utility, military, and amateur radio signals from anywhere in the world, using internet-connected software defined radio servers. There are well over a thousand of them, making it possible to enjoy high performance SDR radio operation without any requirement of you to set up large antennas or own radio hardware. All you need to do is boot Skywave Linux on a computer with internet access, find a remote SDR server in your region of interest, and tune across the bands to find signals.
 
 ### About this New Way of Building an Operating System
 
