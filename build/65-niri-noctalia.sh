@@ -44,6 +44,7 @@ FONTS=(
     fira-code-fonts
     fontawesome-fonts-all
     google-noto-emoji-fonts
+    levien-inconsolata-fonts
     polarsys-b612-fonts
 )
 
