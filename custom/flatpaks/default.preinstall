@@ -55,6 +55,10 @@ Branch=stable
 [Flatpak Preinstall com.ranfdev.DistroShelf]
 Branch=stable
 
+# Filezilla (ftp client)
+[Flatpak Preinstall org.filezillaproject.Filezilla]
+Branch=stable
+
 # Image Viewer (image viewer)
 [Flatpak Preinstall org.gnome.Loupe]
 Branch=stable
