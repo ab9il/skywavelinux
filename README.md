@@ -54,9 +54,12 @@ you so choose.
   - Uv (Python manager)
 - **GUI apps (Flatpak)**:
   - Audacity (audio editor)
+  - Bazaar (Flatpak manager)
   - Bleachbit (system cleaner)
   - Bottles (run Windows apps)
   - Brave (web browser)
+  - DistroShelf (container manager)
+  - Filezilla (ftp client)
   - Fldigi (multi mode digital decoder)
   - Gpredict (weather satellite tracking)
   - JS8Call (JS8 digital mode decoder)
