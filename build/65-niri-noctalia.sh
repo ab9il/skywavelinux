@@ -325,7 +325,7 @@ fi
 rpm -q xdg-desktop-portal-gnome xdg-desktop-portal-gtk gnome-keyring
 test -f /usr/share/xdg-desktop-portal/niri-portals.conf
 
-r The editor and the entry that launches it. Fedora's package ships no desktop
+# The editor and the entry that launches it. Fedora's package ships no desktop
 # file, so that half comes from custom/files via the overlay phase: the two are
 # installed by different phases and meet for the first time here. Validating
 # rather than testing for the file covers both -- a missing file and a
@@ -402,7 +402,7 @@ EOF
 # Ensure /etc/pam.d/greetd exists and has pam_systemd.so.
 # The vendor helper may fail in a container build; fall back gracefully.
 if [ ! -f /etc/pam.d/greetd ]; then
-    cat > /etc/pam.d/greetd <<'EOF'
+    cat >/etc/pam.d/greetd <<'EOF'
 auth     required  pam_env.so
 auth     sufficient pam_unix.so try_first_pass likeauth nullok
 auth     required  pam_deny.so
